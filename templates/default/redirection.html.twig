@@ -1,7 +1,16 @@
-<p>Redirection depuis un template</p>
+{% extends 'base.html.twig' %}
+
+{% block title %} 
+Redirection Symfony 4 avec Twig
+{% endblock %}
+
+{% block body %} 
+    {{ parent() }}
+<h1>Redirection depuis un template</h1>
 
 <a href="{{path('index')}}">Cliques moi dessus wsh !</a>
 <br>
 <a href="{{path('test', {'id': 19, 'ext': 'png'})}}">test</a>
 
 {# <a href="{{path('index')}}">INDEX</a> #}
+{% endblock %}

@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wesh l'échalotte !</title>
-</head>
-<body>
+{% extends 'base.html.twig' %}
 
-    <p>Liste des sessions actives</p>
+{% block title %} 
+Sessions Symfony 4 avec Twig
+{% endblock %}
+
+{% block body %} 
+    {{ parent() }}
+
+    <h1>Liste des sessions actives</h1>
 
     {{ display|raw }}
     
-</body>
-</html>
+{% endblock %}

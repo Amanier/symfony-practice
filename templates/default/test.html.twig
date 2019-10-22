@@ -1,2 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} 
+Test Symfony 4 avec Twig
+{% endblock %}
+
+{% block body %} 
+    {{ parent() }}
+
+    <h1>Je suis un test !</h1>
+
 <p>l'ID vaut: {{id}}</p>
 <p>l'extension est: {{ext}}</p>
+
+{% endblock %}

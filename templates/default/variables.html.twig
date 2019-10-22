@@ -1,4 +1,11 @@
-<body>
+{% extends 'base.html.twig' %}
+
+{% block title %} 
+Variables Symfony 4 avec Twig
+{% endblock %}
+
+{% block body %} 
+    {{ parent() }}
     
 <h1>Test sur les variables avec Twig</h1>
 
@@ -31,5 +38,4 @@
 
 {% endif %}
 
-
-</body>
+{% endblock %}
