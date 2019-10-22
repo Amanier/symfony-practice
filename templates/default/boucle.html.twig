@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wesh l'oignon rouge !</title>
+</head>
+<body>
+
+   <h3>Liste des héros:</h3>
+   <ul>
+        {% for hero in heroes %}
+            <li>{{ hero }}</li>
+        {% else %}
+            <p>Liste des héros vide</p>
+        {% endfor %}
+    </ul>
+
+    <h3> Récupérer la clé :</h3>
+    <ul>
+        {% for key, hero in heroes %}
+            <li>A la ligne {{ key }} se trouve : {{ hero }}</li>
+        {% else %}
+            <p>Liste des héros vide</p>
+        {% endfor %}
+    </ul>
+
+    <h3>Récupérer l'index</h3>
+    <ul>
+        {% for hero in heroes %}
+            <li>{{ hero }}
+                <ul>
+                    <li>Itération actuelle : {{ loop.index0 }} </li>
+                    <li>Itérations restantes : {{ loop.revindex0 }} </li>
+                </ul>
+            </li>
+
+        {% else %}
+            <p>Liste des héros vide</p>
+        {% endfor %}
+    </ul>
+
+    {% for hero in heroes %}
+    
+        {% if loop.first %}
+            <h3>Liste des héros</h3>
+            <ul>
+
+        {% endif %}
+
+            <li>{{hero}}</li>
+
+        {% if loop.last %}
+            </ul>
+            {% endif %}
+        {% else %}
+            <p>Liste vide</p>
+
+    {% endfor %}
+
+
+
+
+</body>
+</html>

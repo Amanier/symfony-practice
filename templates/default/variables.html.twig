@@ -1,0 +1,35 @@
+<body>
+    
+<h1>Test sur les variables avec Twig</h1>
+
+{% set texte, nbre = 'Ma première variable Twig', 1 %}
+
+{{ texte }}, {{ nbre }}
+
+<h2>Quelques tests</h2>
+<h3>La variable texte est-elle définie ?</h3>
+
+{% if textes is defined %}
+
+    <p>ui</p>
+    
+{% else %}
+
+    <p>nan</p>
+
+{% endif %}
+
+<h4>Pair ou impair</h4>
+{% if nbre is even %}
+    <p>nbre est pair</p>
+
+{% elseif nbre is odd %}
+    <p>nbre est impair</p>
+
+{% else %}
+    <p>nbre n'est pas un nombre</p>
+
+{% endif %}
+
+
+</body>

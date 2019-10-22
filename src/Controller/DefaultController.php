@@ -146,5 +146,31 @@ class DefaultController extends AbstractController {
     public function condition($age) {
         return $this->render('default/condition.html.twig', ['age' => $age]);
     }
+
+    /**
+     * @Route("/boucle", name="boucle")
+     */
+
+    public function boucle() {
+        $heroes = ['SpiderMan', 'Captain America', 'Iron Man', 'Thor', 'Hulk'];
+
+        return $this->render('default/boucle.html.twig', ['heroes' => $heroes]);
+    }
+
+    /**
+     * @Route("/variables", name="variables")
+     */
+
+    public function variables() {
+        return $this->render('default/variables.html.twig');
+     }
+
+     /**
+      * @Route("/fils", name="fils")
+      */
+
+    public function fils() {
+        return $this->render('default/fils.html.twig');
+    }
 }
 
