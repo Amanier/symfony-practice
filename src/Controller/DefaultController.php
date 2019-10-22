@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
+
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Generator\UrlGenerator;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class DefaultController extends AbstractController {
 
@@ -82,6 +84,67 @@ class DefaultController extends AbstractController {
         return $this->render('Default/redirection.html.twig');
     }
 
-    
+    /**
+     * @Route("/req{id}.{ext}.{age}.{sexe}", name="req")
+     */
+    public function req(Request $request) {
+        /**
+         *   Récupérer le GET
+         * ex avec: /req?prenom=Antoine
+         */
+        // return new Response($request);
+            $id = $request->attributes->get('id');
+            $ext = $request->attributes->get('ext');
+            $age = $request->attributes->get('age');
+            $sexe = $request->attributes->get('sexe');
+
+        // return new Response("id: ".$id."<br>ext: ".$ext."<br>age: " .$age. "<br>sexe: " .$sexe);
+    }
+
+    /**
+     * @Route("/session-add:{name}:{content}", name="session-add")
+     */
+    public function sessionAdd($name, $content, Request $request) {
+        // Création d'une session
+        $name = $request->attributes->get('name');
+        $content = $request->attributes->get('content');
+
+        $session = $request->getSession();
+        $session->set($name, $content);
+
+        return new Response('Session ajoutée !');
+    }
+
+    /**
+     * @Route("/session-del", name="session-del")
+     */
+    public function sessionDel() {
+        session_destroy();
+        return new Response('Session des truites');
+    }
+
+    /**
+     * @Route("/sessions", name="sessions")
+     */
+
+     public function sessions(Request $request) {
+        $session = $request->getSession();
+        $display = '';
+        foreach($session as $key => $value) {
+            $display = $display.'<p> La session ('.$key.') contient: ('.$value.') </p>';
+        }
+
+        // return new Response($display);
+        return $this->render('default/sessions.html.twig', [
+            'display' => $display
+        ]);
+    }
+
+    /**
+    * @Route("/condition-{age}", name="condition")
+    */
+    public function condition($age) {
+        return $this->render('default/condition.html.twig', ['age' => $age]);
+    }
 }
 

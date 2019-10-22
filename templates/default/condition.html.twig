@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wesh l'oignon rouge !</title>
+</head>
+<body>
+
+    {# commentaire #}
+
+    {# {{ variable }} #}
+    
+    {# REMPLACER & PAR AND si fonctionne pas  #}
+
+    {% if age > 0 and age < 18 %}
+        <p>{{age}} : Casses tô d'la margat !</p>
+    {% elseif age >= 18 %}
+        <p>{{age}} : C'est bon fiu t peux v'nir !</p>
+    {% else %}
+        <p>{{age}} : Bô c'est pô un age çô c'est an'let' !</p>
+    {% endif  %}
+
+</body>
+</html>
