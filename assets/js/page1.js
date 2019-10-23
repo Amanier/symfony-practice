@@ -6,11 +6,16 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../css/fils.css');
+require('../css/page1.css');
 
 
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+// console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+
+const image = require('../img/simplavengers.jpg');
+document.getElementById("fond").style.height = '416px';
+document.getElementById("fond").style.width = '234px';
+document.getElementById("fond").style.background = `url('${image}')`;

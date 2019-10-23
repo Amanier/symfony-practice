@@ -1,16 +1,30 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ encore_entry_link_tags('page1') }}
+{% endblock %}
+
 {% block title %} 
 Redirection Symfony 4 avec Twig
 {% endblock %}
 
 {% block body %} 
     {{ parent() }}
+
 <h1>Redirection depuis un template</h1>
+
+<div id="fond"></div>
+
+<img src="{{ asset('build/img/damien.jpg') }}">
+
 
 <a href="{{path('index')}}">Cliques moi dessus wsh !</a>
 <br>
 <a href="{{path('test', {'id': 19, 'ext': 'png'})}}">test</a>
 
 {# <a href="{{path('index')}}">INDEX</a> #}
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('page1') }}
 {% endblock %}
