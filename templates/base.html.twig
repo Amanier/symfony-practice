@@ -3,12 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            
+        {% endblock %}
 
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/e833813c5e.js" crossorigin="anonymous"></script>
         
-
     </head>
 
     <body>
@@ -16,24 +19,23 @@
         
             <p>Ici y aura mon header</p>
             <ul>
-                <li><a href="{{ path('index') }}">ACCUEIL</a></li>
-                <li><a href="{{ path('boucle') }}">BOUCLE</a> </li>
-                <li><a href="{{ path('fils') }}">FILS</a> </li>
-                <li><a href="{{ path('condition', {'age': '19'}) }}">CONDITION</a> </li>
-                <li><a href="{{ path('redirect') }}">REDIRECTION</a>  </li>
-                <li><a href="{{ path('session-add', {'name': 'hello', 'content': 'world'}) }}">AJOUTER SESSION</a></li>
-                <li><a href="{{ path('test') }}">TEST</a></li>
-                <li><a href="{{ path('variables') }}">VARIABLES</a></li>
+                <li><a href="{{ path('index') }}">Accueil</a></li>
+                <li><a href="{{ path('boucle') }}">Boucle</a> </li>
+                <li><a href="{{ path('fils') }}">Fils</a> </li>
+                <li><a href="{{ path('condition', {'age': '19'}) }}">Conditions</a> </li>
+                <li><a href="{{ path('redirect') }}">Redirection</a>  </li>
+                <li><a href="{{ path('sessions', {'name': 'hello', 'content': 'world'}) }}">Ajouter session</a></li>
+                <li><a href="{{ path('test') }}">Test</a></li>
+                <li><a href="{{ path('variables') }}">variables</a></li>
             </ul>
-                    
         
-            {% endblock %}
+        {% endblock %}
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
         {% block javascripts %}
-        
+            {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </body>
 </html>

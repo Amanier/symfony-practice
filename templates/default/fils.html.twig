@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+    {% block stylesheets %}
+            {{ encore_entry_link_tags('fils') }}
+    {% endblock %}
+
 {% block body %}
 
     {{ parent() }}
@@ -10,3 +14,7 @@
 {% block title %}
     {{parent()}} Symfony 4 
 {% endblock %}
+
+    {% block javascripts %}
+            {{ encore_entry_script_tags('fils') }}
+    {% endblock %}

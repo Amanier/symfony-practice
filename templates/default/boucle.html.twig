@@ -1,8 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block title %} 
-Boucle Symfony 4 avec Twig
+    Boucle Symfony 4 avec Twig
 {% endblock %}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('fils') }}
+    {% endblock %}
 
 {% block body %} 
     {{ parent() }}
@@ -59,6 +63,8 @@ Boucle Symfony 4 avec Twig
             <p>Liste vide</p>
 
     {% endfor %}
+    {% endblock %}
 
-
+    {% block javascripts %}
+        {{ encore_entry_script_tags('boucle') }}
     {% endblock %}
