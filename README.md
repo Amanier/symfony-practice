@@ -8,6 +8,9 @@
 ``` bash
 ../www/symfony-practice$ composer install 
 ```
+``` bash
+../www/symfony-practice$ yarn install 
+```
 
 ## Commands
 ### Cache 
