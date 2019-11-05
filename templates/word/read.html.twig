@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Translation{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Readez moi :</h1>
+        
+        <div class="card border-primary mb-3" style="max-width: 70%;">
+            <div class="card-header text-center"> {{ word.id }} </div>
+            <div class="card-body">
+                <p class="card-text text-center">{{ word.french }}</p>
+                <p class="card-text text-center">{{ word.english }}</p>
+            </div>
+            <div class="card-footer border-primary text-center d-flex justify-content-around">
+                <a class="btn btn-warning" href="{{ path('admin-word-del', { 'id': word.id }) }}">Delaite</a>
+                <a class="btn btn-primary" href="{{ path('admin-word-update', { 'id': word.id }) }}">Piaf</a>
+                <a class="btn btn-dark" href="{{ path('admin-words') }}">Back to Home</a>
+            </div>
+        </div>
+
+{% endblock %}

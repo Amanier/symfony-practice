@@ -17,3 +17,7 @@
 ``` bash
 php bin/console cache:clear
 ```
+``` bash
+php bin/console make:entity Créer une table dans la BDD
+```
+

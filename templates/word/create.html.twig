@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Translation{% endblock %}
+
+{% block body %}
+
+    
+    <div class="container">
+        
+        <h1>Hello Word !</h1>
+        
+        {{ form_start(form) }}
+
+            <div class="row">
+                <div class="col-6 text-center mb-3">
+                    {{ form_label(form.french, 'FR', {'attr': {'class': 'task_field'}} ) }}
+                    {{ form_widget(form.french, {'attr': {'class': 'bg-dark text-warning'}} ) }}
+                </div>
+
+                <div class="col-6 text-center">
+                    {{ form_label(form.english, 'EN') }}
+                    {{ form_widget(form.english, {'attr': {'class': 'bg-dark text-warning'}} ) }}
+                </div>
+            </div>       
+
+        {{ form_end(form) }}
+
+        <a class="btn btn-dark" href="{{ path('admin-words') }}">Back to Home</a>
+
+    </div>
+
+{% endblock %}

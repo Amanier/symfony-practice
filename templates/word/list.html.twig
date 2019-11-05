@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wsh l'echalotte !{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Liste des mots:</h1>
+
+        <button type="button" class="btn btn-light mb-3"><a href="{{ path('admin-word-create') }}">Nouveau mot</a></button>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">French</th>
+                <th scope="col">English</th>
+            </tr>
+            </thead>
+
+            <tbody>
+
+                {% for word in words %}
+
+            <tr>
+                <th>{{ word.id }}</th>
+                <td>{{ word.french }}</td>
+                <td>{{ word.english }}</td>
+                <td><a href="{{ path('admin-word-del',{ 'id': word.id }) }}">Delaite</a></td>
+                <td><a href="{{ path('admin-word-update',{ 'id': word.id }) }}">Piaf</a></td>
+                <td><a href="{{ path('admin-word-read',{ 'id': word.id }) }}">Rides</a></td>
+
+            </tr>
+            
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
